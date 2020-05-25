@@ -1,0 +1,13 @@
+<div *ngIf="showModal" class="loading">
+  <div class="center">
+    <h2>{{dataCard.nombre}}</h2>
+    <h5>{{dataCard.descripcion}}</h5>
+    <div class="ion-margin-bottom">
+      <img src="../../assets/euro.png" alt="">
+      <span>x25</span>
+   </div>
+    <ion-button color="success" (click)="onClose()">
+      Entrar
+    </ion-button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pictionary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <canvas #myCanvas></canvas>
+  <ion-content class="bloque-chat ion-padding" #chatContent>
+      <p *ngFor="let item of textosChat">
+        <ion-label color="primary">{{item.user}}</ion-label>: {{item.texto}} <small> {{item.fecha | date:'shortTime'}}</small>
+      </p>
+  </ion-content>
+  <ion-input class="inputChat" (keyup.enter)="onInput(inputChat)" type="text" placeholder="Escribe..." #inputChat></ion-input>
+</ion-content>

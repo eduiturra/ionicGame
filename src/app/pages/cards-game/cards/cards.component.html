@@ -1,0 +1,14 @@
+<div class="flip-card" (click)="onCardRotate()">
+  <div class="flip-card-inner" [ngClass]="{'card-rotate': cardRotate}">
+    <div class="flip-card-front">
+      
+    </div>
+    <div class="flip-card-back">
+      <h6>{{dataCard.nombre}}</h6>
+      <ion-text>
+        <small>{{dataCard.descripcion}}</small>
+      </ion-text>
+    </div>
+  </div>
+</div>
+<app-card-modal *ngIf="showModal"  [dataCard]="dataCard"></app-card-modal>

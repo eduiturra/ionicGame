@@ -1,0 +1,16 @@
+
+<ion-content color="primary">
+  <ion-buttons>  
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <div class="ion-text-center" *ngIf="roomsActivate?.users">
+    <h1>{{username}}  VS  {{userOtherName}}</h1>
+    <h2>{{userPuntaje}} - {{userOtherPuntaje}}</h2>
+  </div>
+  <div class="ion-text-center" *ngIf="timerOutQuiz">
+    <h1 class="textBigText">{{timeOut}}</h1>
+  </div>
+  <div *ngIf="showEval">
+      <app-eval-alternativas (sendAnswer)="sendAnswer($event)" (sendResult)="sendResult($event)" [evaluacion]="roomsActivate.quiz"></app-eval-alternativas>
+  </div>
+</ion-content>

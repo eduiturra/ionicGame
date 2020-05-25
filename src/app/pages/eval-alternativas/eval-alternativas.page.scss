@@ -1,0 +1,43 @@
+#pregunta{
+    font-size: 1.1rem;
+}
+.altsEval{
+    padding: 7px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+}
+
+.green {
+    color: green;
+}
+.red {
+   color: red;
+}
+.corazon{
+    width: 23px;
+    margin-right: 2px;
+}
+.altsEval{
+    transition: all .3s linear;
+}
+.altsEval.transition{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+ion-badge{
+    position: relative;
+    right: -6px;
+    padding: 3px;
+}
+.feedbackPregunta{
+    top: 180px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+.feedbackPregunta h1{
+    font-size: 36px;
+    font-weight: bold;
+}
+

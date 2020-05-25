@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SocketService } from '../services/socket.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(
+    private readonly socketService: SocketService
+  ) {}
+
+  onClick() {
+    // this.socketService.emitJWT();
+  }
 
 }

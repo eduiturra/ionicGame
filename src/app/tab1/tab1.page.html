@@ -1,17 +1,83 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+  <ion-toolbar color="primary">      
+    <div class="header-items" slot="start">
+      <img src="../../assets/coin.png" alt=""> 
+      <span>1312</span> 
+    </div>
+    <div class="ion-text-center">
+      {{nombreUsuario}}
+    </div>
+    <div class="header-items" slot="end">
+      <img src="../../assets/ticket.png" alt=""> 
+      <span>30</span>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button (click)="onLogOut()">
+    LogOut
+  </ion-button>
+    <ion-button [routerLink]="['/container-cards-game/init']"  id="btn-nuevo-juego" size="large" color="success" expand="block">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Nuevo Juego
+    </ion-button>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-list-header class="text-header">
+      <div class="pulsating-circle"></div>
+      <ion-label  size="large">Tu Turno</ion-label>
+    </ion-list-header>
+    <ion-list class="list-games">
+      <ion-item lines="full">
+        <ion-avatar slot="start">
+          <img src="../../assets/user/man-1.png">
+        </ion-avatar>
+        <ion-label class="list-name">Eduardo Iturra</ion-label>
+        <ion-label class="list-result">1 : 3</ion-label>
+        <ion-button class="list-jugar" strong="strong" size="large" fill="clear" color="success" slot="end">
+          Jugar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+    <ion-list class="list-games">
+      <ion-item lines="full">
+        <ion-avatar slot="start">
+          <img src="../../assets/user/woman-1.png">
+        </ion-avatar>
+        <ion-label class="list-name">Eduardo Iturra</ion-label>
+        <ion-label class="list-result">2 : 5</ion-label>
+        <ion-button class="list-jugar" strong="strong" size="large" fill="clear" color="success" slot="end">
+          Jugar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+<br>
+    <ion-list-header class="text-header">
+      <div class="pulsating-circle-w"></div>
+      <ion-label size="large">Su Turno</ion-label>
+    </ion-list-header>
+    <ion-list class="list-games">
+      <ion-item lines="full">
+        <ion-avatar slot="start">
+          <img src="../../assets/user/man-2.png">
+        </ion-avatar>
+        <ion-label class="list-name">Eduardo Iturra</ion-label>
+        <ion-label class="list-result">1 : 1</ion-label>
+        <ion-button class="list-jugar" strong="strong"  fill="clear" color="warning" slot="end">
+          Esperar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+    <ion-list class="list-games">
+      <ion-item lines="full">
+        <ion-avatar slot="start">
+          <img src="../../assets/user/woman-3.png">
+        </ion-avatar>
+        <ion-label class="list-name">Eduardo Iturra</ion-label>
+        <ion-label class="list-result">2 : 2</ion-label>
+        <ion-button class="list-jugar" strong="strong" fill="clear" color="warning" slot="end">
+          Esperar
+        </ion-button>
+      </ion-item>
+    </ion-list>
 </ion-content>

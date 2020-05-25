@@ -1,0 +1,34 @@
+
+
+<app-timer-quiz #timerQuiz (timeOut)="TimeOut()"></app-timer-quiz>
+<div  *ngIf="evaluacion" class="w-100">
+  <ion-row class="centerFlex">
+    <ion-col size="12" size-md="10">
+          <div class="ion-padding-horizontal">
+              <h5 style="font-style:italic">{{indice + 1}}/{{evaluacion.EvalObjeto.NumPreguntas}}</h5>
+              <div>
+                  <h6 id="pregunta">{{evaluacion.EvalObjeto.EvalPreguntas[indice].Pregunta}}</h6>
+              </div>
+          </div>
+            <div class="row">
+                <div style="margin: 0 10px;" class="col" id="containerAlt"  [@stagger]="indice">
+                  <div class="alt" [@slideInRight] *ngFor="let alt of evaluacion.EvalObjeto.EvalPreguntas[indice].EvalAlternativas;let indexOfelement=index;">
+                    <div>
+                      <p #alternativas [attr.data-alt]="alt.id" (click)="onRespuesta(alt.id, alternativas)" class="altsEval grey">
+                          {{alt.Alternativa}}
+                      </p>
+                    </div>
+                  </div>
+                    
+                </div>
+            </div>
+                  
+    </ion-col>
+  </ion-row>
+</div>
+<div class="feedbackPregunta animated bounceIn" *ngIf="mostrarCorrecta">
+  <h1 style="color:green">CORRECTA</h1>
+</div>
+<div class="feedbackPregunta animated bounceIn" *ngIf="mostrarIncorrecta">
+<h1 style="color:red">INCORRECTA</h1>
+</div>

@@ -1,0 +1,18 @@
+
+<ion-content  color="primary">
+  <ion-buttons>  
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <div class="ion-text-center" *ngIf="dataUsers">
+    <h4 class="ion-no-margin">
+      <span style="display: inline-block;margin-right: 10px;"  [ngClass]="{'animated infinite tada slow': turno === dataUsers.userindex}">{{dataUsers.username}}</span>  
+        VS
+      <span style="display: inline-block;margin-left: 10px;" [ngClass]="{'animated infinite tada slow': turno === dataUsers.otherindex}">{{dataUsers.othername}}</span>
+    </h4>
+    <h5 class="ion-no-margin">{{dataUsers.userpuntos}} - {{dataUsers.otherpuntos}}</h5>
+  </div>
+  <div class="container-cards">
+    <div [ngClass]="{'bloquePantalla': turno === dataUsers.otherindex}"></div>
+    <app-cards *ngFor="let item of cartasEnums" (changeCards)="changeOpenCard($event)" [tipoCartas] = "item" ></app-cards>
+  </div>
+</ion-content>
